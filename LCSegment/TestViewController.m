@@ -37,7 +37,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationItem.title = @"这是乱写的";
+    self.navigationItem.title = @"LCSegment 2.0";
 }
 
 - (void)didReceiveMemoryWarning {

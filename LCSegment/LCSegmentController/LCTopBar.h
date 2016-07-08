@@ -34,6 +34,12 @@
 
 @property (nonatomic, assign) CGFloat itemFontSize;
 
+- (void)setSelectedButtonIndex:(NSInteger)selectedIndex;
+- (UIButton *)getSelectedItem;
+
 @property (nonatomic, weak) id<LCTopBarSelectedButtonDelegate> delegate;
+
+
+@property (nonatomic, assign) CGFloat scale;
 
 @end

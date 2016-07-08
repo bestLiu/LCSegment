@@ -115,4 +115,47 @@
     }
 }
 
+- (void)setSelectedButtonIndex:(NSInteger)selectedIndex
+{
+    for (int i = 0; i < _titles.count; i ++) {
+        UIButton *btn = [self viewWithTag:i + 1];
+        btn.selected = NO;
+        if (i == selectedIndex) {
+            btn.selected = YES;
+        }
+    }
+}
+
+- (UIButton *)getSelectedItem
+{
+    for (int i = 0; i < _titles.count; i ++) {
+      UIButton *btn = [self viewWithTag:i + 1];
+        if (btn.selected == YES) {
+            return  btn;
+        }
+    }
+    return  nil;
+}
+- (void)setScale:(CGFloat)scale
+{
+    _scale = scale;
+    
+    //      R G B
+    // 默认：0.4 0.6 0.7
+    // 红色：1   0   0
+    
+//    CGFloat red = 1;
+//    CGFloat green = 0 + (0 - 0.7) * scale;
+//    CGFloat blue = 0.7 + (0 - 0.7) * scale;
+//    UIColor *color = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
+//    for (int i = 0; i < _titles.count; i ++) {
+//        UIButton *btn = [self viewWithTag:i + 1];
+//        [btn setTitleColor:color forState:<#(UIControlState)#>]
+//    }
+
+    // 大小缩放比例
+    CGFloat transformScale = 1 + scale * 0.3; // [1, 1.3]
+    self.transform = CGAffineTransformMakeScale(transformScale, transformScale);
+}
+
 @end
